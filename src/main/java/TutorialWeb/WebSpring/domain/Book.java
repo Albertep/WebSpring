@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+
 @Entity
 public class Book {
 
@@ -20,12 +21,23 @@ public class Book {
     @JoinTable(name = "autores_libro",joinColumns = @JoinColumn(name = "bookId"), inverseJoinColumns = @JoinColumn(name = "authorID"))
     private Set<Author> authors=new HashSet<>();
 
+    @ManyToOne
+    public Publisher publisher;
+
     public Book() {
     }
 
     public Book(String title, String isbn) {
         this.title = title;
         this.isbn = isbn;
+    }
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
     }
 
     public long getId() {

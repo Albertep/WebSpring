@@ -15,17 +15,19 @@ public class Author {
     private String name;
     private String surname;
 
-    @ManyToMany(mappedBy = "autores")
+    @ManyToMany(mappedBy = "authors")
     private Set<Book> books=new HashSet<>();
 
 
-    private Author(){
 
-    }
 
     public Author(String name, String surname) {
         this.name = name;
         this.surname = surname;
+    }
+
+    public Author() {
+
     }
 
     public long getKey() {
