@@ -58,5 +58,9 @@
 			</plugin>
 		</plugins>
 	</build>
+	<scm>
+		<developerConnection>scm:git:https://github.com/Albertep/WebSpring.git</developerConnection>
+		<tag>petweb-0.0.1</tag>
+	</scm>
 
 </project>
